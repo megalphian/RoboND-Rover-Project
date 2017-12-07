@@ -88,6 +88,9 @@ def perception_step(Rover):
     # TODO:
     # NOTE: camera image is coming to you in Rover.img
     scale = 10
+    dst_size = 5
+    bottom_offset = 6
+    img = Rover.img
     # 1) Define source and destination points for perspective transform
     source = np.float32([[14, 140], [301 ,140],[200, 96], [118, 96]])
     destination = np.float32([[img.shape[1]/2 - dst_size, img.shape[0] - bottom_offset],
@@ -105,9 +108,9 @@ def perception_step(Rover):
         # Example: Rover.vision_image[:,:,0] = obstacle color-thresholded binary image
         #          Rover.vision_image[:,:,1] = rock_sample color-thresholded binary image
         #          Rover.vision_image[:,:,2] = navigable terrain color-thresholded binary image
-        Rover.vision_image[:,:,0] = obstacle_threshed
-        Rover.vision_image[:,:,1] = rock_threshed
-        Rover.vision_image[:,:,2] = path_threshed
+    Rover.vision_image[:,:,0] = obstacle_threshed
+    Rover.vision_image[:,:,1] = rock_threshed
+    Rover.vision_image[:,:,2] = path_threshed
 
     # 5) Convert map image pixel values to rover-centric coords
     x, y = rover_coords(path_threshed)
@@ -125,6 +128,7 @@ def perception_step(Rover):
     Rover.worldmap[r_w_y, r_w_x, 1] += 1
     Rover.worldmap[w_y, w_x, 2] += 1
     # 8) Convert rover-centric pixel positions to polar coordinates
+    rover_centric_pixel_distances, rover_centric_angles = to_polar_coords(x,y)
     # Update Rover pixel distances and angles
     Rover.nav_dists = rover_centric_pixel_distances
     Rover.nav_angles = rover_centric_angles
