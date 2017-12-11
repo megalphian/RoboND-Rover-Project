@@ -108,9 +108,9 @@ def perception_step(Rover):
         # Example: Rover.vision_image[:,:,0] = obstacle color-thresholded binary image
         #          Rover.vision_image[:,:,1] = rock_sample color-thresholded binary image
         #          Rover.vision_image[:,:,2] = navigable terrain color-thresholded binary image
-    Rover.vision_image[:,:,0] = obstacle_threshed
-    Rover.vision_image[:,:,1] = rock_threshed
-    Rover.vision_image[:,:,2] = path_threshed
+    Rover.vision_image[:,:,0] = obstacle_threshed * 255
+    Rover.vision_image[:,:,1] = rock_threshed * 255
+    Rover.vision_image[:,:,2] = path_threshed * 255
 
     # 5) Convert map image pixel values to rover-centric coords
     x, y = rover_coords(path_threshed)
