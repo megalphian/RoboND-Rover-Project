@@ -8,6 +8,7 @@
 [image1]: ./misc/Rock_test.png
 [image2]: ./misc/Filtered_rock.png
 [image3]: ./misc/Simulator_run.png
+[video1]: ./output/test_mapping.mp4
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/916/view) Points
 ### Here is how I approached each point of the above Rubric to create a solution for each of them
@@ -41,6 +42,9 @@ def color_thresh(img, above_rgb_thresh=(160, 160, 160), below_rgb_thresh=(256, 2
 ![alt text][image1]
 ##### Binary mask reult
 ![alt text][image2]
+
+##### Test output video
+![alt text][video1]
 
 #### 2. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result.
 The process image should take in the video feed from the robot and map the navigable terrain, obstacles and rock samples in world coordinates.
@@ -95,7 +99,7 @@ Upon testing with the original decision matrix in `decision.py`, I was able to r
 
 #### 2. Launching in autonomous mode your rover can navigate and map autonomously.  Explain your results and how you might improve them in your writeup.  
 
-The simulator was launched with the resolution of 1280x800 at a Good graphics quality setting. The rover was able to map the environment, locate the rock samples and obstacles and pass the minimum requirements ~70% of the time with no manual intervention. Below is a snapshot of one such run passing the necessary requirements.
+The simulator was launched with the resolution of 1280x800 at a Good graphics quality setting. The rover was able to map the environment, locate the rock samples and obstacles and pass the minimum requirements ~80% of the time with no manual intervention. Below is a snapshot of one such run passing the necessary requirements.
 
 ![alt text][image3]
 
