@@ -43,7 +43,7 @@ def color_thresh(img, above_rgb_thresh=(160, 160, 160), below_rgb_thresh=(256, 2
 ##### Binary mask reult
 ![alt text][image2]
 
-![##### Test output video][video1]
+![Test output video][video1]
 
 #### 2. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result.
 The process image should take in the video feed from the robot and map the navigable terrain, obstacles and rock samples in world coordinates.
