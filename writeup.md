@@ -104,4 +104,6 @@ The simulator was launched with the resolution of 1280x800 at a Good graphics qu
 
 ##### Inferences:
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+The approach I took to this problem is to implement the required steps with the least complexity possible. I made the `color_thresh()` function more versatile to be reused for a range of colors. The perception step was able to differentiate the features in the surroundings reliably to pass the project with the original decision matrix.
+
+The rover still has problems with certain areas of the simulation where it spins around continuously. This is because the decision matrix still requires work. I intend to continue working on this project and attempt the NASA challenge. A good algorithm for this is to create a wall following robot by restricting the vector calculations to one side of the percepted environment.
